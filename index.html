@@ -9,44 +9,70 @@
             content="Free shifumi game in sketchy style. Have fun !"
         />
         <meta name="author" content="Justin Verhaeghe" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        />
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
         <script defer src="/assets/js/script.js"></script>
         <link rel="stylesheet" href="/assets/css/style.css" />
         <title>Shi-Fu-Mi</title>
     </head>
     <body>
+        <!-- Header -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col text-center pt-3">
+                <div class="col pt-2">
+                    <button class="btn btn-outline-warning">
+                        <a
+                            href="https://github.com/justinverhaeghe"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            ><i class="bi bi-github"></i> Mes projets</a
+                        >
+                    </button>
+                </div>
+            </div>
+            <!-- Fin Header -->
+            <!-- Règles du jeu -->
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8 text-center">
                     <h1
-                        class="border border-black border-3 border-opacity-10 rounded-1"
+                        class="border border-black border-3 border-opacity-10 rounded-1 text-white bg-dark"
                     >
                         Pierre / Feuille / Ciseaux
                     </h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col text-center pt-3">
-                    <h3>Règles du jeu</h3>
-                    <p>
-                        Le jeu Pierre Feuille Ciseaux est un jeu simple et
-                        amusant qui se joue à deux. Chaque joueur choisit l'une
-                        des trois options : la pierre , la feuille ou les
-                        ciseaux.
-                    </p>
-                    <p>
-                        Les règles sont les suivantes : la pierre bat les
-                        ciseaux (elle les écrase), les ciseaux battent la
-                        feuille (ils la coupent) et la feuille bat la pierre
-                        (elle l'enveloppe).
-                    </p>
-                    <p>
-                        Si les deux joueurs choisissent la même option, c'est un
-                        match nul et le jeu est rejoué. Le joueur qui remporte 5
-                        manches gagne.
-                    </p>
+                <div class="col-2"></div>
+                <div class="col-8 text-center pt-3">
+                    <div class="card text-white bg-dark mb-3">
+                        <div class="card-header">Règles du jeu</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Le jeu Pierre Feuille Ciseaux est un jeu simple
+                                et amusant qui se joue à deux. Chaque joueur
+                                choisit l'une des trois options : la pierre , la
+                                feuille ou les ciseaux.
+                            </p>
+                            <p>
+                                Les règles sont les suivantes : la pierre casse
+                                les ciseaux , les ciseaux coupent la feuille et
+                                la feuille enveloppe la pierre.
+                            </p>
+                            <p>
+                                Si les deux joueurs choisissent la même option,
+                                c'est un match nul et le jeu est rejoué. Le
+                                joueur qui remporte 5 manches gagne.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- Fin Regles du jeu -->
+            <!-- Scoreboard -->
             <div class="row">
                 <div class="col scoreboard">
                     <div class="row pt-4">
@@ -65,6 +91,8 @@
                     </div>
                 </div>
             </div>
+            <!-- Fin Scoreboard -->
+            <!-- Choix élément -->
             <div class="row">
                 <div class="p-3 choices"></div>
                 <div class="col text-center zoom" id="game">
@@ -91,6 +119,8 @@
                     </button>
                 </div>
             </div>
+            <!-- Fin choix élément -->
+            <!-- bloc de fin -->
             <div class="row">
                 <div class="result text-center fs-3 pt-4" id="result">
                     <p>Choissisez votre arme !</p>
@@ -100,7 +130,13 @@
                     Nouvelle partie
                 </button>
             </div>
+            <!-- End page -->
+            <!-- Footer -->
+            <footer class="d-flex justify-content-end">
+                <p>Copyright &copy; 2023. Tous droits réservés.</p>
+            </footer>
         </div>
+        <!-- Fin footer -->
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

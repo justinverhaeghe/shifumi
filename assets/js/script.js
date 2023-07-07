@@ -63,10 +63,25 @@ function updateScore(result) {
 function displayResult(result) {
     if (result === "draw") {
         resultDiv.innerHTML = "<p>Egalité!</p>";
+        let imgDeuce = document.createElement("img");
+        imgDeuce.classList.add("pb-3");
+        imgDeuce.src =
+            "https://media3.giphy.com/media/Aw2V3gGD5znfG/giphy.gif?cid=ecf05e474yod7njdry2n1z49nk0hze15wzutxguziz864wx6&ep=v1_gifs_search&rid=giphy.gif&ct=g";
+        resultDiv.append(imgDeuce);
     } else if (result === "player") {
         resultDiv.innerHTML = "<p>Vous avez gagné !</p>";
+        let imgWin = document.createElement("img");
+        imgWin.classList.add("pb-3");
+        imgWin.src =
+            "https://media4.giphy.com/media/xHMIDAy1qkzNS/giphy.gif?cid=ecf05e47sz6s2da1t3vd4ys4f2crsxbah2cdo10k1r09sz2l&ep=v1_gifs_search&rid=giphy.gif&ct=g";
+        resultDiv.append(imgWin);
     } else {
         resultDiv.innerHTML = "<p>Vous avez perdu !</p>";
+        let imgLose = document.createElement("img");
+        imgLose.classList.add("pb-3");
+        imgLose.src =
+            "https://media4.giphy.com/media/66H4XkI1OWAOA/giphy.gif?cid=ecf05e47kkva95ssbyu5tqzz2o95diikue4u3h73unig9p05&ep=v1_gifs_search&rid=giphy.gif&ct=g";
+        resultDiv.append(imgLose);
     }
 }
 
