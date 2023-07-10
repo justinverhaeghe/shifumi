@@ -99,7 +99,7 @@ function checkGameOver() {
         var playAgainBtn = document.getElementById("play-again");
         playAgainBtn.style.display = "block";
         buttons.forEach(function (button) {
-            button.disabled = true;
+            button.disabled = false;
         });
         playAgainBtn.addEventListener("click", resetGame);
     }

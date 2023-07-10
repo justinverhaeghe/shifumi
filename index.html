@@ -39,34 +39,70 @@
                 <div class="col-2"></div>
                 <div class="col-8 text-center">
                     <h1
-                        class="border border-black border-3 border-opacity-10 rounded-1 text-white bg-dark"
+                        class="border border-black border-3 border-opacity-10 rounded-1"
                     >
                         Pierre / Feuille / Ciseaux
                     </h1>
                 </div>
             </div>
+            <!-- Mise en place du offCanvas pour les règles du jeu -->
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8 text-center pt-3">
+                <div class="col-4"></div>
+                <div class="col-4 text-center pt-3">
                     <div class="card text-white bg-dark mb-3">
-                        <div class="card-header">Règles du jeu</div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Le jeu Pierre Feuille Ciseaux est un jeu simple
-                                et amusant qui se joue à deux. Chaque joueur
-                                choisit l'une des trois options : la pierre , la
-                                feuille ou les ciseaux.
-                            </p>
-                            <p>
-                                Les règles sont les suivantes : la pierre casse
-                                les ciseaux , les ciseaux coupent la feuille et
-                                la feuille enveloppe la pierre.
-                            </p>
-                            <p>
-                                Si les deux joueurs choisissent la même option,
-                                c'est un match nul et le jeu est rejoué. Le
-                                joueur qui remporte 5 manches gagne.
-                            </p>
+                        <button
+                            class="btn btn-primary"
+                            type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#offCanvasInstructions"
+                            aria-controls="offCanvasInstructions"
+                        >
+                            Règles du jeu
+                        </button>
+                        <div
+                            class="offcanvas offcanvas-start"
+                            tabindex="-1"
+                            id="offCanvasInstructions"
+                            aria-labelledby="offCanvasInstructionsLabel"
+                        >
+                            <div class="offcanvas-header">
+                                <h5
+                                    class="offcanvas-title"
+                                    id="offCanvasInstructionsLabel"
+                                >
+                                    Règles du jeu
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="btn-close text-reset"
+                                    data-bs-dismiss="offcanvas"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div>
+                                    <p>
+                                        Le jeu Pierre Feuille Ciseaux est un jeu simple
+                                        et amusant qui se joue à deux. Chaque joueur
+                                        choisit l'une des trois options : la pierre , la
+                                        feuille ou les ciseaux.
+                                    </p>
+                                    <p>
+                                        Les règles sont les suivantes : la pierre casse
+                                        les ciseaux , les ciseaux coupent la feuille et
+                                        la feuille enveloppe la pierre.
+                                    </p>
+                                    <p>
+                                        Si les deux joueurs choisissent la même option,
+                                        c'est un match nul et le jeu est rejoué. Le
+                                        joueur qui remporte 5 manches gagne.
+                                    </p>
+                                    <p>
+                                        Dans cette version, vous jouez contre l'ordinateur.
+                                    </p>
+                                </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,15 +112,15 @@
             <div class="row">
                 <div class="col scoreboard">
                     <div class="row pt-4">
-                        <div class="col-2"></div>
+                        <div class="col-3"></div>
                         <div
-                            class="col-3 fs-4 player-score text-center border border-black border-3 border-opacity-25 rounded-1"
+                            class="col-2 fs-4 player-score text-center border border-black border-3 border-opacity-10 rounded-1"
                         >
                             Player : 0
                         </div>
                         <div class="col-2"></div>
                         <div
-                            class="col-3 fs-4 computer-score text-center border border-black border-3 border-opacity-25 rounded-1"
+                            class="col-2 fs-4 computer-score text-center border border-black border-3 border-opacity-10 rounded-1"
                         >
                             Computer : 0
                         </div>
@@ -98,21 +134,21 @@
                 <div class="col text-center zoom" id="game">
                     <button class="choice" id="Pierre">
                         <img
-                            src="./assets/img/pierre.png"
+                            src="./assets/img/pierre.webp"
                             alt="dessin d'une pierre"
                             class="img-fluid px-2"
                         />
                     </button>
                     <button class="choice" id="Feuille">
                         <img
-                            src="./assets/img/paper.png"
+                            src="./assets/img/paper.webp"
                             alt="dessin d'une feuille"
                             class="img-fluid px-4"
                         />
                     </button>
                     <button class="choice" id="Ciseaux">
                         <img
-                            src="./assets/img/scissors.png"
+                            src="./assets/img/scissors.webp"
                             alt="dessin d'une paire de ciseaux"
                             class="img-fluid px-2"
                         />
@@ -122,18 +158,23 @@
             <!-- Fin choix élément -->
             <!-- bloc de fin -->
             <div class="row">
-                <div class="result text-center fs-3 pt-4" id="result">
+                <div class="result text-center fs-4 pt-4" id="result">
                     <p>Choissisez votre arme !</p>
                 </div>
                 <div class="text-center" id="computer-choice"></div>
-                <button class="play-again fs-3 text-center" id="play-again">
-                    Nouvelle partie
-                </button>
+                <div class="d-flex justify-content-center">
+                    <button
+                        class="play-again fs-5 text-center btn btn-outline-secondary w-25"
+                        id="play-again"
+                    >
+                        Nouvelle partie
+                    </button>
+                </div>
             </div>
             <!-- End page -->
             <!-- Footer -->
-            <footer class="d-flex justify-content-end">
-                <p>Copyright &copy; 2023. Tous droits réservés.</p>
+            <footer class="d-flex justify-content-center pt-5 fs-6">
+                <small>Copyright &copy; 2023. Tous droits réservés.</small>
             </footer>
         </div>
         <!-- Fin footer -->
