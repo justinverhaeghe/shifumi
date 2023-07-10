@@ -10,7 +10,7 @@ button {
     border: none;
 }
 h1 {
-    font-size: 5vh;
+    font-size: 7vh;
 }
 
 .zoom img {
@@ -22,4 +22,7 @@ h1 {
 .zoom :hover img {
     -webkit-transform: scale(1.3);
     transform: scale(1.3);
+}
+#play-again {
+    display: none;
 }
