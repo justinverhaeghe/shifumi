@@ -1,6 +1,7 @@
 body {
     background-color: #ecedee;
     margin: 0;
+    height: 100vh;
 }
 
 img {
@@ -26,4 +27,12 @@ h1 {
 }
 #play-again {
     display: none;
+}
+
+#reglesBox {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#project {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

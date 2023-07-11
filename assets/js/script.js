@@ -1,10 +1,16 @@
 // Variables pour le score
 var playerScore = 0;
 var computerScore = 0;
+var gameHistory = [];
 
-// Sélection des boutons et du résultat
+// Sélécteurs
 var buttons = document.querySelectorAll(".choice");
 var resultDiv = document.getElementById("result");
+var historySection = document.getElementById("history-section");
+var clearHistoryButton = document.getElementById("clear-history");
+
+// Charger l'historique à partir du localStorage lors du chargement de la page
+gameHistory = JSON.parse(localStorage.getItem("gameHistory")) || [];
 
 // Ajouter des écouteurs d'événements aux boutons
 buttons.forEach(function (button) {
@@ -18,6 +24,13 @@ buttons.forEach(function (button) {
         displayResult(result);
 
         checkGameOver();
+
+        // Sauvegarder le résultat dans l'historique si une partie est terminée
+        if (playerScore === 5 || computerScore === 5) {
+            gameHistory.push(result);
+            saveGameHistory();
+            displayGameHistory();
+        }
     });
 });
 
@@ -44,9 +57,9 @@ function playRound(playerChoice, computerChoice) {
 }
 
 // Afficher les choix du joueur et de l'ordinateur
-function displayChoices(playerChoice, computerChoice) {
+function displayChoices(computerChoice) {
     var computerChoiceDiv = document.getElementById("computer-choice");
-    computerChoiceDiv.innerHTML = `<p>L'ordinateur à choisi : <strong>${computerChoice}</strong></p>`;
+    computerChoiceDiv.innerHTML = `<p>L'ordinateur a choisi : <strong>${computerChoice}</strong></p>`;
 }
 
 // Mettre à jour le score
@@ -62,7 +75,7 @@ function updateScore(result) {
 // Afficher le résultat
 function displayResult(result) {
     if (result === "draw") {
-        resultDiv.innerHTML = "<p>Egalité!</p>";
+        resultDiv.innerHTML = "<p>Égalité !</p>";
         let imgDeuce = document.createElement("img");
         imgDeuce.classList.add("pb-3");
         imgDeuce.src = "assets/img/egalite.gif";
@@ -107,7 +120,7 @@ function resetGame() {
     playerScore = 0;
     computerScore = 0;
     updateScoreboard();
-    resultDiv.innerHTML = "<p>Choissisez votre arme !</p>";
+    resultDiv.innerHTML = "<p>Choisissez votre arme !</p>";
     var computerChoiceDiv = document.getElementById("computer-choice");
     computerChoiceDiv.innerHTML = "";
     var playAgainBtn = document.getElementById("play-again");
@@ -119,3 +132,39 @@ function resetGame() {
 
 // Mettre à jour le scoreboard initial
 updateScoreboard();
+
+// Sauvegarder l'historique des parties dans le localStorage
+function saveGameHistory() {
+    localStorage.setItem("gameHistory", JSON.stringify(gameHistory));
+}
+
+// Afficher l'historique des parties
+function displayGameHistory() {
+    historySection.innerHTML = "";
+
+    for (var i = 0; i < gameHistory.length; i++) {
+        var gameResult = gameHistory[i];
+        var gameResultText = "";
+
+        if (gameResult === "draw") {
+            gameResultText = "Égalité";
+        } else if (gameResult === "player") {
+            gameResultText = "Victoire du joueur";
+        } else {
+            gameResultText = "Victoire de l'ordinateur";
+        }
+
+        var gameResultItem = document.createElement("p");
+        gameResultItem.textContent = `Partie ${i + 1}: ${gameResultText}`;
+        historySection.appendChild(gameResultItem);
+    }
+}
+
+// Fonction pour supprimer l'historique des parties
+function clearGameHistory() {
+    gameHistory = [];
+    saveGameHistory();
+    displayGameHistory();
+}
+
+clearHistoryButton.addEventListener("click", clearGameHistory);
