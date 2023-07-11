@@ -5,14 +5,14 @@ body {
 }
 
 img {
-    max-height: 25vh;
+    max-height: 19vh;
 }
 button {
     background: none;
     border: none;
 }
 h1 {
-    font-size: 7vh;
+    font-size: 6vh;
 }
 
 .zoom img {
@@ -35,4 +35,12 @@ h1 {
 
 #project {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.gif-size {
+    height: 10vh;
+}
+
+#footer {
+    font-size: x-small;
 }

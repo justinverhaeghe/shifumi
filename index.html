@@ -20,20 +20,26 @@
         <!-- Header -->
         <div class="container-fluid">
             <header>
-                <div class="row">
-                    <div class="col pt-2">
+                <!-- <div class="row">
+                    <div class="col pt-1">
                         <a href="https://github.com/justinverhaeghe" target="_blank" rel="noopener noreferrer"
                             ><button id="project" class="btn m-3 text-dark btn-outline-warning">
                                 <i class="bi bi-github"></i> Mes projets
                             </button>
                         </a>
                     </div>
-                </div>
+                </div> -->
                 <!-- Fin Header -->
                 <!-- Règles du jeu -->
                 <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8 text-center">
+                    <div class="col-2">
+                        <a href="https://github.com/justinverhaeghe" target="_blank" rel="noopener noreferrer"
+                            ><button id="project" class="btn m-3 text-dark btn-outline-warning">
+                                <i class="bi bi-github"></i> Mes projets
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col-8 pt-3 text-center">
                         <h1>Pierre / Feuille / Ciseaux</h1>
                     </div>
                 </div>
@@ -41,7 +47,7 @@
             <!-- Mise en place du offCanvas pour les règles du jeu -->
             <div class="row">
                 <div class="col-4"></div>
-                <div class="col-4 text-center pt-3">
+                <div class="col-4 text-center pt-2">
                     <div class="card text-white bg-dark mb-3" id="reglesBox">
                         <button
                             class="btn btn-primary"
@@ -93,13 +99,13 @@
                     <div class="row pt-4">
                         <div class="col-3"></div>
                         <div
-                            class="col-2 fs-4 player-score text-center border border-black border-3 border-opacity-10 rounded-1">
-                            Player : 0
+                            class="col-2 fs-5 player-score text-center border border-black border-3 border-opacity-10 rounded-1">
+                            Joueur : 0
                         </div>
                         <div class="col-2"></div>
                         <div
-                            class="col-2 fs-4 computer-score text-center border border-black border-3 border-opacity-10 rounded-1">
-                            Computer : 0
+                            class="col-2 fs-5 computer-score text-center border border-black border-3 border-opacity-10 rounded-1">
+                            Ordi : 0
                         </div>
                     </div>
                 </div>
@@ -175,11 +181,9 @@
                     </div>
                 </div>
             </div>
-
             <!-- Fin Section historique -->
-
             <!-- Footer -->
-            <footer class="d-flex justify-content-center pt-5 fs-6">
+            <footer id="footer" class="d-flex justify-content-center pt-3">
                 <small>Copyright &copy; 2023. Tous droits réservés.</small>
             </footer>
         </div>

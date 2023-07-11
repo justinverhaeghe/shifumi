@@ -77,19 +77,19 @@ function displayResult(result) {
     if (result === "draw") {
         resultDiv.innerHTML = "<p>Égalité !</p>";
         let imgDeuce = document.createElement("img");
-        imgDeuce.classList.add("pb-3");
+        imgDeuce.classList.add("pb-1", "gif-size");
         imgDeuce.src = "assets/img/egalite.gif";
         resultDiv.append(imgDeuce);
     } else if (result === "player") {
         resultDiv.innerHTML = "<p>Vous avez gagné !</p>";
         let imgWin = document.createElement("img");
-        imgWin.classList.add("pb-3");
+        imgWin.classList.add("pb-1", "gif-size");
         imgWin.src = "assets/img/victoire.gif";
         resultDiv.append(imgWin);
     } else {
         resultDiv.innerHTML = "<p>Vous avez perdu !</p>";
         let imgLose = document.createElement("img");
-        imgLose.classList.add("pb-3");
+        imgLose.classList.add("pb-1", "gif-size");
         imgLose.src = "assets/img/defaite.gif";
         resultDiv.append(imgLose);
     }
@@ -99,8 +99,8 @@ function displayResult(result) {
 function updateScoreboard() {
     var playerScoreDiv = document.querySelector(".player-score");
     var computerScoreDiv = document.querySelector(".computer-score");
-    playerScoreDiv.textContent = `Player: ${playerScore}`;
-    computerScoreDiv.textContent = `Computer: ${computerScore}`;
+    playerScoreDiv.textContent = `Joueur: ${playerScore}`;
+    computerScoreDiv.textContent = `Ordi: ${computerScore}`;
 }
 
 // Vérifier si le jeu est terminé
