@@ -57,7 +57,7 @@ function playRound(playerChoice, computerChoice) {
 }
 
 // Afficher les choix du joueur et de l'ordinateur
-function displayChoices(computerChoice) {
+function displayChoices(playerChoice, computerChoice) {
     var computerChoiceDiv = document.getElementById("computer-choice");
     computerChoiceDiv.innerHTML = `<p>L'ordinateur a choisi : <strong>${computerChoice}</strong></p>`;
 }
